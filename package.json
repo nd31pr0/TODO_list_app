@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack serve --open",
+    "build": "webpack --mode production"
   },
   "repository": {
     "type": "git",
@@ -17,10 +19,14 @@
   },
   "homepage": "https://github.com/nd31pr0/TODO_list_app#readme",
   "devDependencies": {
+    "css-loader": "^6.10.0",
+    "html-webpack-plugin": "^5.6.0",
+    "style-loader": "^3.3.4",
     "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
-    "date-fns": "^3.0.6"
+    "date-fns": "^3.0.6",
+    "lodash": "^4.17.21"
   }
 }
