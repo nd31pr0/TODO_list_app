@@ -1,16 +1,22 @@
 class Project {
-    constructor(title, description) {
-        this.title = title;
-        this.description = description;
-        this.completed = false;
-        
+    constructor(name) {
+      this.name = name;
+      this.todos = [];
     }
-    
-    markCompleted() {
-        this.completed = true;
+  
+    addTodo(todo) {
+      if (todo instanceof Todo) {
+        this.todos.push(todo);
+      } else {
+        throw new Error('Can only add instances of Todo to a project');
+      }
     }
-
-    toggleCompleted() {
-        this.completed = !this.completed;
+  
+    removeTodo(todoIndex) {
+      this.todos.splice(todoIndex, 1);
     }
-}
+  
+    // Additional methods to modify todos in the project can be added here
+  }
+  
+  export default Project;

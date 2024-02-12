@@ -1,19 +1,12 @@
 class Todo {
-    constructor() {
-        this.tasks = [];
+    constructor(title, description, dueDate, priority, notes, checklist) {
+      this.title = title;
+      this.description = description;
+      this.dueDate = dueDate;
+      this.priority = priority;
+      this.notes = notes || '';
+      this.checklist = checklist || []; // assuming checklist is an array of items
     }
-
-    addTask(task) {
-        this.tasks.push(task);
-    }
-
-    removeTask(task) {
-        const index = this.tasks.indexOf(task);
-        if (index !== -1) {
-            this.tasks.splice(index, 1);
-        }
-    }
-    toggleTaskCompleted(task) {
-        task.completed = !task.completed;
-    }
-}
+  }
+  
+  export default Todo;
