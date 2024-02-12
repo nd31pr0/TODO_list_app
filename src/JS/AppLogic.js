@@ -59,7 +59,26 @@ class AppLogic {
     this.currentProject.removeTodo(todoIndex);
   }
 
-  // Additional functions to manipulate todos and projects can be added here
+  saveProjects() {
+    StorageManager.saveToLocalStorage('projects', this.projects);
+  }
+
+  // Call this method when the app starts to load any saved projects and todos
+  loadProjects() {
+    const savedProjects = StorageManager.getFromLocalStorage('projects');
+    if (savedProjects) {
+      this.projects = savedProjects.map(proj => {
+        const project = new Project(proj.name);
+        project.todos = proj.todos.map(td => new Todo(td.title, td.description, td.dueDate, td.priority, td.notes, td.checklist));
+        return project;
+      });
+      // Optionally set the first project as the current project
+      this.currentProject = this.projects[0];
+    } else {
+      // Create a default project if no projects are saved
+      this.createProject('Default');
+    }
+}
 }
 
 export default AppLogic;
