@@ -33,4 +33,11 @@ projectForm.addEventListener('submit', event => {
 domManager.renderProjects();
 domManager.renderTodos();
 
+// Add the initial rendering logic here
+appLogic.loadProjects();
+domManager.renderProjects();
+if (appLogic.projects.length > 0) {
+  domManager.renderTodos();
+}
+
 export { appLogic, domManager };
