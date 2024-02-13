@@ -1,7 +1,15 @@
-*{
-    margin: 0;
-}
-
-h1 {
-    color: blue;
-}
+#projects-section, #todos-section {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  #project-list li, #todo-list li {
+    cursor: pointer;
+    padding: 5px;
+    margin: 5px 0;
+  }
+  
+  #todo-list li.priority-low { background-color: lightgreen; }
+  #todo-list li.priority-medium { background-color: khaki; }
+  #todo-list li.priority-high { background-color: tomato; }
