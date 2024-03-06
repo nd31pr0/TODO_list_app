@@ -22,24 +22,24 @@ class DOMManager {
     }
   
     // Function to render todos for the current project
-    renderTodos() {
-      const todoList = document.querySelector('#todo-list');
-      todoList.innerHTML = ''; // Clear the list first
-    
-      if (this.appLogic.currentProject) {
-        this.appLogic.currentProject.todos.forEach((todo, index) => {
-          const listItem = document.createElement('li');
-          listItem.innerHTML = `
-            <span>${todo.title} - Due: ${todo.dueDate}</span>
-            <button class="edit-todo-btn" data-index="${index}">Edit</button>
-            <button class="delete-todo-btn" data-index="${index}">Delete</button>
-          `;
-          listItem.classList.add(`priority-${todo.priority}`);
-          todoList.appendChild(listItem);
-        });
+      renderTodos() {
+        const todoList = document.querySelector('#todo-list');
+        todoList.innerHTML = ''; // Clear the list first
+      
+        if (this.appLogic.currentProject) {
+          this.appLogic.currentProject.toDos.forEach((todo, index) => {
+            const listItem = document.createElement('li');
+            listItem.innerHTML = `
+              <span>${todo.title} - Due: ${todo.dueDate}</span>
+              <button class="edit-todo-btn" data-index="${index}">Edit</button>
+              <button class="delete-todo-btn" data-index="${index}">Delete</button>
+            `;
+            listItem.classList.add(`priority-${todo.priority}`);
+            todoList.appendChild(listItem);
+          });
+        }
+        this.attachTodoEventListeners();
       }
-      this.attachTodoEventListeners();
-    }
     
     // Function to attach event listeners to each todo's edit and delete buttons
     attachTodoEventListeners() {

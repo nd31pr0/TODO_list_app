@@ -48,7 +48,7 @@ class AppLogic {
   toggleTodoComplete(todoIndex) {
     const todo = this.currentProject.toDos[todoIndex];
     if (todo) {
-      todo.isComplete = !todo.isComplete; // Assuming you add an isComplete property to your Todo class
+      todo.isComplete = !todo.isComplete;
     } else {
       throw new Error('Todo not found');
     }
