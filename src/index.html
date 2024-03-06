@@ -1,13 +1,38 @@
-<div id="app-container">
-    <div id="projects-section">
-      <h2>Projects</h2>
-      <ul id="project-list"></ul>
-      <!-- Add project form or button to trigger a modal/form to add projects -->
-    </div>
-    <div id="todos-section">
-      <h2>Todos</h2>
-      <ul id="todo-list"></ul>
-      <!-- Add todo form or button to trigger a modal/form to add todos -->
-    </div>
-</div>
-  <!-- Include the modals for editing todos as described previously -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Todo List project</title>
+  <link rel="stylesheet" href="./css/main.css"></link>
+</head>
+<body>
+  
+  <div id="app-container">
+      <div id="projects-section">
+        <h2>Projects</h2>
+        <ul id="project-list"></ul>
+        <!-- Add project form or button to trigger a modal/form to add projects -->
+        <form id="project-form">
+          <input type="text" name="name" placeholder="Project Name" required>
+          <button type="submit">Add Project</button>
+        </form>
+      </div>
+      <div id="todos-section">
+        <h2>Todos</h2>
+        <ul id="todo-list"></ul>
+        <!-- Add todo form or button to trigger a modal/form to add todos -->
+        <form id="todo-form">
+          <input type="text" name="title" placeholder="Title" required>
+          <textarea name="description" placeholder="Description"></textarea>
+          <input type="date" name="due-date" required>
+          <select name="priority" required>
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+          </select>
+          <button type="submit">Add Todo</button>
+        </form>
+      </div>
+  </div>
+  <script src="./JS/index.js"></script>
+</body>
+</html>

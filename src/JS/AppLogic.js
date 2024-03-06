@@ -21,7 +21,7 @@ class AppLogic {
   createProject(name) {
     const newProject = new Project(name);
     this.projects.push(newProject);
-    this.currentProject = newProject; // Optionally set the new project as the current project
+    this.currentProject = newProject; // Here, we set the new project as the current project
   }
 
   // Function to set the current project
@@ -30,7 +30,7 @@ class AppLogic {
     if (project) {
       this.currentProject = project;
     } else {
-      throw new Error('Project not found');
+      throw new Error(`Project doesn't exist`);
     }
   }
 

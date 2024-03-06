@@ -1,3 +1,4 @@
+import Todo from "./Todo.js";
 class Project {
     constructor(name) {
       this.name = name;
@@ -17,6 +18,6 @@ class Project {
     }
   
     // Additional methods to modify todos in the project can be added here
-  }
+}
   
-  export default Project;
+export default Project;

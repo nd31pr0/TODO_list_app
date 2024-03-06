@@ -8,7 +8,8 @@ module.exports = {
   // Output configuration
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
+    filename: 'main.js',
+    path: path.resolve(__dirname, 'dist'),
     clean: true, // Clean the output directory before emit
   },
 
@@ -17,6 +18,7 @@ module.exports = {
     rules: [
       // CSS: Use style-loader and css-loader to process CSS files
       {
+        test: /\.js$/,
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
       },
